@@ -1,6 +1,7 @@
 tasks:
+  - init: pip install -r requirements.txt #poetry install
+    command: poetry run python3 -m python_hello_world
   - name: az
     init: |
       curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-  - init: poetry install # pip install -r requirements.txt
-    command: poetry run python3 -m python_hello_world
+      az login --use-device-code
